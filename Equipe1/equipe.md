@@ -1,4 +1,4 @@
 
-Augusto Felipe Hornburg
-Gustavo Henrique Spiess
-Matheus Felipe Klauberg
+Augusto Felipe Hornburg <br />
+Gustavo Henrique Spiess <br />
+Matheus Felipe Klauberg <br />
