@@ -27,7 +27,7 @@ Especifique o documento High Concept do seu jogo com a sua equipe baseado nos ma
 
 ## High Concept
 
-Follow in the footsteps of someone that already lived through an story reaching horrors beyond human imagination!
+Follow in the footsteps of a person through a engaging and exciting story, discovering new ambients, solving puzzles, obtaining items and interacting with the world around you to continue in your path, with the goal of reach and learn horrors beyond human imagination.
 
 ## Features
 
