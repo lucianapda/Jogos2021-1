@@ -67,13 +67,13 @@ This is a college project, so all of the invested time is not going to cost anyt
 
 ### Dwarf Fortress
 
-![Dwarf Fortress]('./dwarf-fortress.png')
+![Dwarf Fortress](./dwarf-fortress.png)
 
 Dwarf Fortress is a construction and management simulation and roguelike indie video game created by Bay 12 Games. Freeware and in development since 2002, its first alpha version was released in 2006 and it received attention for being a two-member project surviving solely on donations.
 
 ### AI Dungeon
 
-![AI Dungeon]('./ai-dungeon.png')
+![AI Dungeon](./ai-dungeon.png)
 
 AI Dungeon is a free-to-play single-player and multiplayer text adventure game which uses artificial intelligence to generate unlimited content. It also allows players to create and share their own custom adventure settings. The game's first version was made available on Colab in May 2019, and its second version (initially called AI Dungeon 2) was released online and for iOS & Android in December 2019. The AI model was then upgraded in July 2020.
 
