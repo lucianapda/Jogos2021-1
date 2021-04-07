@@ -25,7 +25,7 @@ The game interface is simple allowing for a very low learning curve to new playe
 
 ## Genre
 
-The game is a text based adventure with puzzle and rogue-like elements, similar to games like (The Dreamhold)[https://zarfhome.com/dreamhold/], (Zork)[http://textadventures.co.uk/games/view/5zyoqrsugeopel3ffhz_vq/zork] and (Spider and Web)[https://www.eblong.com/zarf/zweb/tangle/]. And also suspense filled games like (The Last Door)[https://thegamekitchen.com/thelastdoor/] and (Darkwood)[https://www.darkwoodgame.com].
+The game is a text based adventure with puzzle and rogue-like elements, similar to games like [The Dreamhold](https://zarfhome.com/dreamhold/), [Zork](http://textadventures.co.uk/games/view/5zyoqrsugeopel3ffhz_vq/zork) and [Spider and Web](https://www.eblong.com/zarf/zweb/tangle/). And also suspense filled games like [The Last Door](https://thegamekitchen.com/thelastdoor/) and [Darkwood](https://www.darkwoodgame.com).
 
 ## Hooks
 
