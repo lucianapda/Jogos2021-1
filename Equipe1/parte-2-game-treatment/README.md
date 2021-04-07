@@ -19,9 +19,13 @@ Follow in the footsteps of a person through a engaging and exciting story, disco
 
 Follow in the footsteps of a person through a engaging and exciting story, discovering new ambients, solving puzzles, obtaining items and interacting with the world around you to continue in your path, with the goal of reach and learn horrors beyond human imagination.
 
+The game is a text base homage to classical suspense and terror games. In addition, it will have the bonus of a procedural generated story, giving plenty of opportunities to the player to get surprised, as new story plots are discovered by the player in each playthrough.
+
+The game interface is simple allowing for a very low learning curve to new players.
+
 ## Genre
 
-The game is a text based adventure with puzzle and rogue-like elements.
+The game is a text based adventure with puzzle and rogue-like elements, similar to games like (The Dreamhold)[https://zarfhome.com/dreamhold/], (Zork)[http://textadventures.co.uk/games/view/5zyoqrsugeopel3ffhz_vq/zork] and (Spider and Web)[https://www.eblong.com/zarf/zweb/tangle/]. And also suspense filled games like (The Last Door)[https://thegamekitchen.com/thelastdoor/] and (Darkwood)[https://www.darkwoodgame.com].
 
 ## Hooks
 
@@ -46,9 +50,19 @@ The game engine will be developed using Python3 with the tracery library.
 
 The graphical interface will be developed using web technologies, such as JavaScript, using the React UI library, using Web APIs such as Web Audio API to play sounds during the story.
 
+## Audio Highlights
+
+During some story moments, a eerie sound will play to help the player get acclimated to the story.
+
+The sounds will change to not be repetetive, but will follow the same theme.
+
+## Art Highlights
+
+As the game consists of a collection of stories, the art displayed will follow a conceptual theme to help immerse the player in the story.
+
 ## Hardware
 
-Low-processing power desktop computers, even without a windows-like graphic interface.
+Computers or cellphones with access to a web browser.
 
 # Production Details
 
