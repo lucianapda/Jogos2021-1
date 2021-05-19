@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Loading.unity
     guid: 5ee1f5cfe244bd94fa543e1a46ff44d6
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/GameScenarios/1 - The Apartment.unity
     guid: fb654a2ad6271ba4cb8f606108625a35
   - enabled: 1
     path: Assets/Scenes/EndingMenu.unity

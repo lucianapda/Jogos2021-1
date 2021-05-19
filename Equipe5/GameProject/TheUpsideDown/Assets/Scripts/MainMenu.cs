@@ -4,7 +4,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        Loader.Load(Assets.Enums.GameScene.Game);
+        Loader.Load(Assets.Enums.GameScene.FirstScenario);
     }
 
     public void EndGame()
