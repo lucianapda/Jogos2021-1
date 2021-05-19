@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class FirstScene : MonoBehaviour
 {
+    private Text dialogText;
     // Start is called before the first frame update
     void Start()
     {
-        
+         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            dialogText.text = "Deu certo";
+        }
+    }
+
+    private void Awake() {
+        dialogText = transform.Find("DialogText").GetComponent<Text>(); 
     }
 }
