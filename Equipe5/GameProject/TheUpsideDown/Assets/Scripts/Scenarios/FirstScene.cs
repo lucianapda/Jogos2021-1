@@ -1,25 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-public class FirstScene : MonoBehaviour
+using Assets.Enums;
+
+public class FirstScene : BaseScene
 {
-    private Text dialogText;
-    // Start is called before the first frame update
-    void Start()
-    {
-         
-    }
+    public override GameScene NextScene => GameScene.SecondScenario;
+    public override bool LoadNextSceneWithoutLoadingScene => true;
 
-    // Update is called once per frame
-    void Update()
+    public override void ConfigureScene()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            dialogText.text = "Deu certo";
-        }
-    }
-
-    private void Awake() {
-        dialogText = transform.Find("DialogText").GetComponent<Text>(); 
+        AddDialog("PROTAGONISTA", "Estou com fome, mas acho que não tem nada em casa...");
+        AddDialog("PROTAGONISTA", "Preciso ir ao mercado");
+        AddDialog(string.Empty, "* [PROTAGONISTA] levanta e vai em direção à porta *");
     }
 }

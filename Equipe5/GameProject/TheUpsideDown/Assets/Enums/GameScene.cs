@@ -8,6 +8,8 @@ namespace Assets.Enums
         MainMenu,
         [StringValue("1 - The Apartment")]
         FirstScenario,
+        [StringValue("2 - Apartment Hall")]
+        SecondScenario,
         [StringValue("Loading")]
         Loading,
         [StringValue("EndingMenu")]

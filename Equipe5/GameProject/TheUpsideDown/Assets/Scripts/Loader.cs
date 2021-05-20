@@ -6,11 +6,16 @@ public static class Loader
 {
     private static GameScene _targetScene;
 
-    public static void Load(GameScene scene)
+    public static void Load(GameScene scene, bool loadRightNow = false)
     {
-        SceneManager.LoadScene(GameScene.Loading.GetStringValue());
+        if (loadRightNow)
+            SceneManager.LoadScene(scene.GetStringValue());
+        else
+        {
+            SceneManager.LoadScene(GameScene.Loading.GetStringValue());
 
-        _targetScene = scene;
+            _targetScene = scene;
+        }
     }
 
     public static void LoadTargetScene()
