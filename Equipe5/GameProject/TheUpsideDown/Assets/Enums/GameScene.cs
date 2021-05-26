@@ -12,6 +12,8 @@ namespace Assets.Enums
         SecondScenario,
         [StringValue("3 - Stairs")]
         ThirdScenario,
+        [StringValue("11 - Ending")]
+        EleventhScene,
         [StringValue("Loading")]
         Loading,
         [StringValue("EndingMenu")]
