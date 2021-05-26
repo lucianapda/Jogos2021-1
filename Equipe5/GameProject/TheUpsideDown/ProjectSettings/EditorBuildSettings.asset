@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScenarios/2 - Apartment Hall.unity
     guid: 370857de7412c1443abdec293233ecb4
+  - enabled: 1
+    path: Assets/Scenes/GameScenarios/3 - Stairs.unity
+    guid: bd5b1bfcb569e984f9cd114206ba12d3
   m_configObjects: {}
