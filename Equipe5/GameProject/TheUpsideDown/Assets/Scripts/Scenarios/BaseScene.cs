@@ -1,5 +1,6 @@
 ﻿using Assets.Entities;
 using Assets.Enums;
+using Assets.Helpers;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,8 +15,11 @@ public abstract class BaseScene : MonoBehaviour
     public abstract GameScene NextScene { get; }
     public virtual bool LoadNextSceneWithoutLoadingScene { get; } = false;
 
+    protected string Protagonist { get; private set; }
+
     private void Awake()
     {
+        Protagonist = CharactersNames.Get(Character.Protagonist);
         _dialogText = transform.Find("DialogBox").transform.Find("DialogText").GetComponent<Text>();
         _characterName = transform.Find("DialogBox").transform.Find("CharacterName").GetComponent<Text>();
     }
@@ -53,4 +57,7 @@ public abstract class BaseScene : MonoBehaviour
 
     protected void AddDialog(string characterName, string dialogText)
         => Dialogs.Add(new Dialog(characterName, dialogText));
+
+    protected void AddContextDialog(string dialogText)
+        => Dialogs.Add(new Dialog(string.Empty, dialogText));
 }

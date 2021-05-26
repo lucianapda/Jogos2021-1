@@ -7,8 +7,8 @@ public class FirstScene : BaseScene
 
     public override void ConfigureScene()
     {
-        AddDialog("PROTAGONISTA", "Estou com fome, mas acho que não tem nada em casa...");
-        AddDialog("PROTAGONISTA", "Preciso ir ao mercado");
-        AddDialog(string.Empty, "* [PROTAGONISTA] levanta e vai em direção à porta *");
+        AddDialog(Protagonist, "Estou com fome, mas acho que não tem nada em casa...");
+        AddDialog(Protagonist, "Preciso ir ao mercado");
+        AddContextDialog($"* [{Protagonist}] levanta e vai em direção à porta *");
     }
 }
