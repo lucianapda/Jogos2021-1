@@ -4,36 +4,36 @@ using Assets.Utils.Extensions;
 
 public class ThirdScene : BaseScene
 {
-    public override GameScene NextScene => GameScene.EleventhScene;
+    public override GameScene NextScene => GameScene.FourthScenario;
 
     public override void ConfigureScene()
     {
         var protagonistName = Protagonist.ToCamelCase();
 
-        AddDialog(CharactersNames.Get(Character.FriendlyCat), "Rápido, venha comigo!");
+        AddDialog(CharactersNames.Get(Character.FriendlyCat), "Rï¿½pido, venha comigo!");
         AddContextDialog($"Sem pensar duas vezes, [{Protagonist}] segue o felino.");
-        AddDialog(Protagonist, "Quem é você?");
+        AddDialog(Protagonist, "Quem ï¿½ vocï¿½?");
         AddDialog(CharactersNames.Get(Character.FriendlyCat), "Eu? Eu sou Gato!");
         AddDialog(CharactersNames.Get(Character.Cat), "Sou como um guia aqui, ajudando as pessoas que se perdem neste lugar");
-        AddDialog(CharactersNames.Get(Character.Cat), "E você, quem é?");
-        AddDialog(Protagonist, $"Meu nome é {protagonistName}");
-        AddDialog(Protagonist, "E que lugar é este?! Tudo parece sujo, bagunçado, muito diferente do meu apartamento!");
+        AddDialog(CharactersNames.Get(Character.Cat), "E vocï¿½, quem ï¿½?");
+        AddDialog(Protagonist, $"Meu nome ï¿½ {protagonistName}");
+        AddDialog(Protagonist, "E que lugar ï¿½ este?! Tudo parece sujo, bagunï¿½ado, muito diferente do meu apartamento!");
         AddDialog(CharactersNames.Get(Character.Cat), "Este lugar? Simples!");
-        AddDialog(CharactersNames.Get(Character.Cat), "Você está no mundo invertido, ele se parece bastante com a sua casa, só que... sujo e bagunçado, como você mesmo disse.");
-        AddDialog(Protagonist, "Mas por que eu estou aqui? O que faço para voltar para o MEU mundo?");
-        AddDialog(CharactersNames.Get(Character.Cat), $"Muitas perguntas, {protagonistName}, você nem está me deixando falar direito!");
-        AddDialog(Protagonist, "Eu estou nervosa, não sei onde estou e muito menos o que fazer!");
-        AddDialog(CharactersNames.Get(Character.Cat), "Ok, ok. Sua justificativa é razoável, mas não precisa mais se preocupar, pois eu estou aqui!");
+        AddDialog(CharactersNames.Get(Character.Cat), "Vocï¿½ estï¿½ no mundo invertido, ele se parece bastante com a sua casa, sï¿½ que... sujo e bagunï¿½ado, como vocï¿½ mesmo disse.");
+        AddDialog(Protagonist, "Mas por que eu estou aqui? O que faï¿½o para voltar para o MEU mundo?");
+        AddDialog(CharactersNames.Get(Character.Cat), $"Muitas perguntas, {protagonistName}, vocï¿½ nem estï¿½ me deixando falar direito!");
+        AddDialog(Protagonist, "Eu estou nervosa, nï¿½o sei onde estou e muito menos o que fazer!");
+        AddDialog(CharactersNames.Get(Character.Cat), "Ok, ok. Sua justificativa ï¿½ razoï¿½vel, mas nï¿½o precisa mais se preocupar, pois eu estou aqui!");
         AddDialog(Protagonist, "...");
-        AddDialog(Protagonist, "(É sério isso?)");
-        AddDialog(CharactersNames.Get(Character.Cat), "Como você já entende que não está mais em casa, a primeira coisa que você precisa entender é sobre como este mundo funciona");
+        AddDialog(Protagonist, "(ï¿½ sï¿½rio isso?)");
+        AddDialog(CharactersNames.Get(Character.Cat), "Como vocï¿½ jï¿½ entende que nï¿½o estï¿½ mais em casa, a primeira coisa que vocï¿½ precisa entender ï¿½ sobre como este mundo funciona");
         AddDialog(CharactersNames.Get(Character.Cat), "Aqui, como acabamos de experimentar, existem monstros que te atacam na primeira oportunidade que tem");
-        AddDialog(CharactersNames.Get(Character.Cat), "Recomendo que você fuja deles por enquanto, pois você precisa sobreviver");
-        AddDialog(CharactersNames.Get(Character.Cat), "Você também tinha perguntado sobre como sair daqui, certo?");
-        AddDialog(CharactersNames.Get(Character.Cat), "Então, existem duas maneiras, a fácil e a difícil");
+        AddDialog(CharactersNames.Get(Character.Cat), "Recomendo que vocï¿½ fuja deles por enquanto, pois vocï¿½ precisa sobreviver");
+        AddDialog(CharactersNames.Get(Character.Cat), "Vocï¿½ tambï¿½m tinha perguntado sobre como sair daqui, certo?");
+        AddDialog(CharactersNames.Get(Character.Cat), "Entï¿½o, existem duas maneiras, a fï¿½cil e a difï¿½cil");
         // Fazer com que o player escolha qual resposta ouvir primeiro.
-        AddDialog(CharactersNames.Get(Character.Cat), "A mais difícil, é derrotando alguns monstros mais fortes, se tiver sorte, conseguirá voltar ao seu mundo");
-        AddDialog(CharactersNames.Get(Character.Cat), "A mais fácil é morrendo, obviamente");
-        AddDialog(CharactersNames.Get(Character.Cat), "Mas não se preocupe! Como eu disse antes, estou aqui para te ajudar");
+        AddDialog(CharactersNames.Get(Character.Cat), "A mais difï¿½cil, ï¿½ derrotando alguns monstros mais fortes, se tiver sorte, conseguirï¿½ voltar ao seu mundo");
+        AddDialog(CharactersNames.Get(Character.Cat), "A mais fï¿½cil ï¿½ morrendo, obviamente");
+        AddDialog(CharactersNames.Get(Character.Cat), "Mas nï¿½o se preocupe! Como eu disse antes, estou aqui para te ajudar");
     }
 }
