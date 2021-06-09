@@ -35,8 +35,11 @@ public abstract class BaseScene : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            ShowCurrentDialog();
+        if (!PauseMenu.Paused)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                ShowCurrentDialog();
+        }
     }
 
     private void ShowCurrentDialog()

@@ -5,7 +5,7 @@ namespace Assets.Enums
     public enum GameScene
     {
         [StringValue("MainMenu")]
-        MainMenu,
+        MainMenu = 1,
         [StringValue("1 - The Apartment")]
         FirstScenario,
         [StringValue("2 - Apartment Hall")]
