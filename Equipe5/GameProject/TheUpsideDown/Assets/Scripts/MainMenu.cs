@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    const string USER_NAME_INPUT_PLACEHOLDER = "Digite seu nome";
     private InputField UserNameInput;
 
     private readonly GameScene[] ValidScenes = new GameScene[]
@@ -26,19 +27,15 @@ public class MainMenu : MonoBehaviour
         string playerName = PlayerPrefs.GetString(Constants.USER_NAME);
 
         if (!string.IsNullOrWhiteSpace(playerName))
-        {
             UserNameInput.text = playerName.Trim();
-        }
     }
 
     public void StartGame()
     {
         string playerName = UserNameInput.text?.Trim();
 
-        if (!string.IsNullOrWhiteSpace(playerName))
-        {
+        if (!string.IsNullOrWhiteSpace(playerName) && !playerName.Equals(USER_NAME_INPUT_PLACEHOLDER))
             CharactersNames.ProtagonistName = playerName;
-        }
 
         PlayerPrefs.SetString(Constants.USER_NAME, CharactersNames.ProtagonistName);
         PlayerPrefs.Save();
@@ -59,6 +56,6 @@ public class MainMenu : MonoBehaviour
     public void ResetGame()
     {
         PlayerPrefs.DeleteAll();
-        UserNameInput.text = "Digite seu nome";
+        UserNameInput.text = USER_NAME_INPUT_PLACEHOLDER;
     }
 }

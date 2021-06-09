@@ -11,10 +11,14 @@ namespace Assets.Helpers
 
         public static string Get(Character character)
         {
-            if (character == Character.Protagonist)
-                return string.IsNullOrWhiteSpace(ProtagonistName) ? DefaultProtagonistName : ProtagonistName;
+            string characterName;
 
-            return character.GetStringValue().ToUpper();
+            if (character == Character.Protagonist)
+                characterName = string.IsNullOrWhiteSpace(ProtagonistName) ? DefaultProtagonistName : ProtagonistName;
+            else
+                characterName = character.GetStringValue().ToUpper();
+
+            return characterName.ToUpper();
         }
     }
 }
