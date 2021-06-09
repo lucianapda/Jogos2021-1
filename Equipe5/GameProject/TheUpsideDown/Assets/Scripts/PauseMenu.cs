@@ -45,6 +45,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        Resume();
         Loader.Load(Assets.Enums.GameScene.MainMenu);
     }
 }

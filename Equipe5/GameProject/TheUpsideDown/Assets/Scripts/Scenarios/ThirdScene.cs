@@ -4,7 +4,7 @@ using Assets.Utils.Extensions;
 
 public class ThirdScene : BaseScene
 {
-    public override GameScene NextScene => GameScene.EleventhScene;
+    public override GameScene NextScene => GameScene.FourthScenario;
 
     public override void ConfigureScene()
     {
