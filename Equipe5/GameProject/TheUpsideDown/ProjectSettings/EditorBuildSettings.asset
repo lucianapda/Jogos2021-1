@@ -24,9 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScenarios/3 - Stairs.unity
     guid: bd5b1bfcb569e984f9cd114206ba12d3
   - enabled: 1
+    path: Assets/Scenes/GameScenarios/4 - Level 1.unity
+    guid: 41c1a4b8c96e4b649944228fdf925915
+  - enabled: 1
     path: Assets/Scenes/GameScenarios/11 - Ending.unity
     guid: 23ca4a76522bf17449719de6012bc97a
-  - enabled: 1
-    path: Assets/Scenes/GameScenarios/4 - Level 1.unity
-    guid: 6420285a87c708be2935a8c1960ed180
   m_configObjects: {}
