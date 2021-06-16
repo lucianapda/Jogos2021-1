@@ -15,6 +15,8 @@ public abstract class DialogScene : BaseScene
 
     protected string Protagonist { get; private set; }
 
+    public abstract void ConfigureSceneDialog();
+
     private void Awake()
     {
         Protagonist = CharactersNames.Get(Character.Protagonist);
@@ -24,7 +26,7 @@ public abstract class DialogScene : BaseScene
 
     private void Start()
     {
-        ConfigureScene();
+        ConfigureSceneDialog();
 
         ShowCurrentDialog();
     }

@@ -5,7 +5,7 @@ public class Scene11 : DialogScene
 {
     public override GameScene NextScene => GameScene.EndingMenu;
 
-    public override void ConfigureScene()
+    public override void ConfigureSceneDialog()
     {
         AddDialog(Protagonist, "Hummm, espere, há instantes eu estava no mundo invertido, agora estou... em casa ?!");
         AddDialog(Protagonist, "Tudo que eu precisei enfrentar era apenas a minha imaginação?");

@@ -6,7 +6,7 @@ public class Scene02 : DialogScene
     public override GameScene NextScene => GameScene.ThirdScenario;
     public override bool LoadNextSceneWithoutLoadingScene => true;
 
-    public override void ConfigureScene()
+    public override void ConfigureSceneDialog()
     {
         AddDialog(Protagonist, "O quê?!");
         AddDialog(Protagonist, "Eu estava em casa até agora, o-onde estou?");

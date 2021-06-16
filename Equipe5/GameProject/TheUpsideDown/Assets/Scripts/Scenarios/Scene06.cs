@@ -1,9 +1,9 @@
 using Assets.Enums;
 using UnityEngine;
 
-public class Scene04 : BaseScene
+public class Scene06 : BaseScene
 {
-    public override GameScene NextScene => GameScene.FifthScene;
+    public override GameScene NextScene => GameScene.SeventhScene;
 
     void Start()
     {

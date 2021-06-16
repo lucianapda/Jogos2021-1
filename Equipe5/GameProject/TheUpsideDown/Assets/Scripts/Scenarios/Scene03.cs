@@ -6,7 +6,7 @@ public class Scene03 : DialogScene
 {
     public override GameScene NextScene => GameScene.FourthScenario;
 
-    public override void ConfigureScene()
+    public override void ConfigureSceneDialog()
     {
         var protagonistName = Protagonist.ToCamelCase();
         var friendlyCatName = CharactersNames.Get(Character.FriendlyCat);
