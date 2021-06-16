@@ -1,7 +1,7 @@
 using Assets.Enums;
 using Assets.Helpers;
 
-public class EleventhScene : BaseScene
+public class Scene11 : DialogScene
 {
     public override GameScene NextScene => GameScene.EndingMenu;
 

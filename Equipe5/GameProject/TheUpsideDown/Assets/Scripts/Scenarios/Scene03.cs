@@ -2,7 +2,7 @@ using Assets.Enums;
 using Assets.Helpers;
 using Assets.Utils.Extensions;
 
-public class ThirdScene : BaseScene
+public class Scene03 : DialogScene
 {
     public override GameScene NextScene => GameScene.FourthScenario;
 

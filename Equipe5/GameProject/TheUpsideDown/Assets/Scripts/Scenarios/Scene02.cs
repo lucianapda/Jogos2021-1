@@ -1,7 +1,7 @@
 using Assets.Enums;
 using Assets.Helpers;
 
-public class SecondScene : BaseScene
+public class Scene02 : DialogScene
 {
     public override GameScene NextScene => GameScene.ThirdScenario;
     public override bool LoadNextSceneWithoutLoadingScene => true;
