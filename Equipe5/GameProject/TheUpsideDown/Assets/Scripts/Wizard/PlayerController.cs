@@ -1,126 +1,131 @@
-﻿using UnityEngine;
+﻿using Assets.Enums;
+using Assets.Utils.Extensions;
+using UnityEngine;
 
 namespace ClearSky
 {
     public class PlayerController : MonoBehaviour
     {
-        public float movePower = 10f;
-        public float jumpPower = 15f; //Set Gravity Scale in Rigidbody2D Component to 5
+        public const float MOVE_POWER = 10f;
+        // Set Gravity Scale in Rigidbody2D Component to 5
+        public const float JUMP_POWER = 15f;
 
-        private Rigidbody2D rb;
-        private Animator anim;
-        Vector3 movement;
-        private int direction = 1;
-        bool isJumping = false;
-        private bool alive = true;
+        private const int LEFT = -1;
+        private const int RIGHT = 1;
 
+        private Rigidbody2D RigidBody;
+        private Animator Animation;
+        private int Direction = RIGHT;
+        bool IsJumping = false;
+        private bool Alive = true;
 
-        // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
-            rb = GetComponent<Rigidbody2D>();
-            anim = GetComponent<Animator>();
+            RigidBody = GetComponent<Rigidbody2D>();
+            Animation = GetComponent<Animator>();
         }
 
         private void Update()
         {
             Restart();
-            if (alive)
+
+            if (Alive)
             {
                 Hurt();
                 Die();
                 Attack();
                 Jump();
                 Run();
-
             }
         }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
-            anim.SetBool("isJump", false);
+            Animation.SetBool(WizardStates.IsJump.GetStringValue(), false);
         }
 
-
-        void Run()
+        private void Run()
         {
             Vector3 moveVelocity = Vector3.zero;
-            anim.SetBool("isRun", false);
+            Animation.SetBool(WizardStates.IsRun.GetStringValue(), false);
+            var horizontalAxis = Input.GetAxisRaw("Horizontal");
 
-
-            if (Input.GetAxisRaw("Horizontal") < 0)
+            if (horizontalAxis != 0)
             {
-                direction = -1;
-                moveVelocity = Vector3.left;
+                if (horizontalAxis < 0)
+                {
+                    Direction = LEFT;
+                    moveVelocity = Vector3.left;
+                }
+                else if (horizontalAxis > 0)
+                {
+                    Direction = RIGHT;
+                    moveVelocity = Vector3.right;
+                }
 
-                transform.localScale = new Vector3(direction, 1, 1);
-                if (!anim.GetBool("isJump"))
-                    anim.SetBool("isRun", true);
+                transform.localScale = new Vector3(Direction, 1, 1);
 
+                if (!Animation.GetBool(WizardStates.IsJump.GetStringValue()))
+                    Animation.SetBool(WizardStates.IsRun.GetStringValue(), true);
             }
-            if (Input.GetAxisRaw("Horizontal") > 0)
-            {
-                direction = 1;
-                moveVelocity = Vector3.right;
 
-                transform.localScale = new Vector3(direction, 1, 1);
-                if (!anim.GetBool("isJump"))
-                    anim.SetBool("isRun", true);
-
-            }
-            transform.position += moveVelocity * movePower * Time.deltaTime;
+            transform.position += moveVelocity * MOVE_POWER * Time.deltaTime;
         }
-        void Jump()
+
+        private void Jump()
         {
-            if ((Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") > 0)
-            && !anim.GetBool("isJump"))
+            if ((Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") > 0) && !Animation.GetBool(WizardStates.IsJump.GetStringValue()))
             {
-                isJumping = true;
-                anim.SetBool("isJump", true);
+                IsJumping = true;
+                Animation.SetBool(WizardStates.IsJump.GetStringValue(), true);
             }
-            if (!isJumping)
+            if (!IsJumping)
             {
                 return;
             }
 
-            rb.velocity = Vector2.zero;
+            RigidBody.velocity = Vector2.zero;
 
-            Vector2 jumpVelocity = new Vector2(0, jumpPower);
-            rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
+            Vector2 jumpVelocity = new Vector2(0, JUMP_POWER);
+            RigidBody.AddForce(jumpVelocity, ForceMode2D.Impulse);
 
-            isJumping = false;
+            IsJumping = false;
         }
-        void Attack()
+
+        private void Attack()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                anim.SetTrigger("attack");
+                Animation.SetTrigger(WizardStates.Attack.GetStringValue());
             }
         }
-        void Hurt()
+
+        private void Hurt()
         {
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                anim.SetTrigger("hurt");
-                if (direction == 1)
-                    rb.AddForce(new Vector2(-5f, 1f), ForceMode2D.Impulse);
-                else
-                    rb.AddForce(new Vector2(5f, 1f), ForceMode2D.Impulse);
+                Animation.SetTrigger(WizardStates.Hurt.GetStringValue());
+
+                var aux = Direction == RIGHT ? -1 : 1;
+                RigidBody.AddForce(new Vector2(5f * aux, 1f), ForceMode2D.Impulse);
             }
         }
-        void Die()
+
+        private void Die()
         {
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                anim.SetTrigger("die");
-                alive = false;
+                Animation.SetTrigger(WizardStates.Die.GetStringValue());
+                Alive = false;
             }
         }
-        void Restart()
+
+        private void Restart()
         {
             if (Input.GetKeyDown(KeyCode.Alpha0))
             {
-                anim.SetTrigger("idle");
-                alive = true;
+                Animation.SetTrigger(WizardStates.Idle.GetStringValue());
+                Alive = true;
             }
         }
     }
