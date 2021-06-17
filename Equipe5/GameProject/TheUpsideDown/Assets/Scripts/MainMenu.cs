@@ -14,6 +14,13 @@ public class MainMenu : MonoBehaviour
         GameScene.FirstScenario,
         GameScene.SecondScenario,
         GameScene.ThirdScenario,
+        GameScene.FourthScenario,
+        GameScene.FifthScene,
+        GameScene.SixthScenario,
+        GameScene.SeventhScene,
+        GameScene.EighthScenario,
+        GameScene.NinethScene,
+        GameScene.TenthScenario,
         GameScene.EleventhScene
     };
 

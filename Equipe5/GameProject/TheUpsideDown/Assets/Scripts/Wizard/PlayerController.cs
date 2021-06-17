@@ -94,7 +94,7 @@ namespace ClearSky
 
         private void Attack()
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetMouseButtonDown(Constants.PRIMARY_BUTTON))
             {
                 Animation.SetTrigger(WizardStates.Attack.GetStringValue());
             }

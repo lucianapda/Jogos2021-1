@@ -1,6 +1,7 @@
 ﻿using Assets.Entities;
 using Assets.Enums;
 using Assets.Helpers;
+using Assets.Utils.Extensions;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,12 +15,24 @@ public abstract class DialogScene : BaseScene
     protected int CurrentDialog { get; private set; } = 0;
 
     protected string Protagonist { get; private set; }
+    protected string ProtagonistName { get; private set; }
+    protected string Cat { get; private set; }
+    protected string InsecurityName { get; private set; }
+    protected string LazzinessName { get; private set; }
+    protected string AnxietyName { get; private set; }
 
     public abstract void ConfigureSceneDialog();
 
     private void Awake()
     {
         Protagonist = CharactersNames.Get(Character.Protagonist);
+        Cat = CharactersNames.Get(Character.Cat);
+        ProtagonistName = Protagonist.ToCamelCase();
+
+        InsecurityName = CharactersNames.Get(Character.Insecurity).ToCamelCase();
+        LazzinessName = CharactersNames.Get(Character.Lazziness).ToCamelCase();
+        AnxietyName = CharactersNames.Get(Character.Anxiety).ToCamelCase();
+
         _dialogText = transform.Find("DialogBox").transform.Find("DialogText").GetComponent<Text>();
         _characterName = transform.Find("DialogBox").transform.Find("CharacterName").GetComponent<Text>();
     }
@@ -35,7 +48,7 @@ public abstract class DialogScene : BaseScene
     {
         if (!PauseMenu.Paused)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonUp(Constants.PRIMARY_BUTTON))
                 ShowCurrentDialog();
         }
     }
@@ -61,4 +74,10 @@ public abstract class DialogScene : BaseScene
 
     protected void AddContextDialog(string dialogText)
         => Dialogs.Add(new Dialog(string.Empty, dialogText));
+
+    protected void AddProtagonistDialog(string dialogText)
+        => Dialogs.Add(new Dialog(Protagonist, dialogText));
+
+    protected void AddCatDialog(string dialogText)
+        => Dialogs.Add(new Dialog(Cat, dialogText));
 }
