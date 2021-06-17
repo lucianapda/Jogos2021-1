@@ -6,29 +6,46 @@ using System;
 public class SlimeControl : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float TimeInterval;
-    private float Timer;
+    private float timeInterval;
+    private float timer;
+    private Rigidbody2D rb2D;
+    private GameObject slimeObject;
+
     void Start()
     {
-      TimeInterval = 0.5f;
-      Timer = 0;
+      slimeObject = GameObject.Find("Slime");
+      rb2D = slimeObject.GetComponent<Rigidbody2D>();
+      Debug.Log(rb2D);
+      timeInterval = 0.5f;
+      timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-      float x = GameObject.Find("Slime").transform.position[0];
+      timer += Time.deltaTime;
 
-      Timer += Time.deltaTime;
-
-      if (Timer > TimeInterval && x > 315) {
+      if (timer > timeInterval) {
         Move();
-        Timer = 0;
+        timer = 0;
       }
     }
 
     void Move()
     {
-      GameObject.Find("Slime").transform.position -= new Vector3(1.0f,0,0);
+      rb2D.AddForce(new Vector2(-100, 0));
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+      Debug.Log(collision);
+      
+      if (collision.gameObject.CompareTag("ground"))
+        {
+            Debug.Log(collision);
+        }
+      
+    }
+
 }
