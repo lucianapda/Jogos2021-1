@@ -5,22 +5,18 @@ using System;
 
 public class SlimeControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private float timeInterval;
-    private float timer;
+    private float timeInterval = 0.4f;
+    private float timer = 0;
     private Rigidbody2D rb2D;
     private GameObject slimeObject;
+    private int slimeWalk = -100;
 
     void Start()
     {
       slimeObject = GameObject.Find("Slime");
       rb2D = slimeObject.GetComponent<Rigidbody2D>();
-      Debug.Log(rb2D);
-      timeInterval = 0.5f;
-      timer = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
       timer += Time.deltaTime;
@@ -33,19 +29,16 @@ public class SlimeControl : MonoBehaviour
 
     void Move()
     {
-      rb2D.AddForce(new Vector2(-100, 0));
+      rb2D.AddForce(new Vector2(slimeWalk, 0));
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-
-      Debug.Log(collision);
-      
-      if (collision.gameObject.CompareTag("ground"))
-        {
-            Debug.Log(collision);
-        }
-      
+      if (collision.gameObject.CompareTag("left_wall") || collision.gameObject.CompareTag("right_wall"))
+      {
+        slimeObject.transform.Rotate(new Vector3(0, 180, 0));
+        slimeWalk *= -1;
+      } 
     }
 
 }
