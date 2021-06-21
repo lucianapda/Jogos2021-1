@@ -9,7 +9,7 @@ public class SlimeControl : MonoBehaviour
     private float timer = 0;
     private Rigidbody2D rb2D;
     private GameObject slimeObject;
-    private int slimeWalk = -100;
+    private float slimeWalk = 1.0f;
 
     void Start()
     {
@@ -29,16 +29,16 @@ public class SlimeControl : MonoBehaviour
 
     void Move()
     {
-      rb2D.AddForce(new Vector2(slimeWalk, 0));
+      GameObject.Find("Slime").transform.position -= new Vector3(slimeWalk,0,0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-      if (collision.gameObject.CompareTag("left_wall") || collision.gameObject.CompareTag("right_wall"))
+      if (collision.gameObject.CompareTag("left_wall") || collision.gameObject.CompareTag("right_wall") || collision.gameObject.CompareTag("wizard"))
       {
         slimeObject.transform.Rotate(new Vector3(0, 180, 0));
         slimeWalk *= -1;
-      } 
+      }
     }
 
 }

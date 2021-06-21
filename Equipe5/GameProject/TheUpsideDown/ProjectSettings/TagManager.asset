@@ -5,10 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
-  - Wizard
   - slime
   - left_wall
   - right_wall
+  - staff
+  - wizard
   layers:
   - Default
   - TransparentFX
