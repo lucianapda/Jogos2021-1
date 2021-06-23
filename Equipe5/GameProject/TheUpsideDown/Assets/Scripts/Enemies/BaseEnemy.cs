@@ -16,7 +16,7 @@ public abstract class BaseEnemy : MonoBehaviour
         Move();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         var collidedObject = collision.gameObject;
 
