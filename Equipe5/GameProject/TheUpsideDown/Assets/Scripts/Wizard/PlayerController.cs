@@ -8,6 +8,7 @@ namespace ClearSky
     {
         public const float MOVE_POWER = 10f;
         public const float JUMP_POWER = 15f;
+        public const float DAMAGE_POWER = 5f;
 
         private const int LEFT = -1;
         private const int RIGHT = 1;
@@ -106,9 +107,19 @@ namespace ClearSky
             IsJumping = false;
         }
 
+        public Transform attackPos;
+        public LayerMask whatIsEnimies;
+
         private void Attack()
         {
             Animation.SetTrigger(WizardStates.Attack.GetStringValue());
+
+            Collider2D[] enimiesToAttack = Physics2D.OverlapCircleAll(attackPos.position, 3, whatIsEnimies);
+
+            for (int i = 0; i < enimiesToAttack.Length; i++)
+            {
+                enimiesToAttack[i].GetComponent<BaseEnemy>().Hurt(DAMAGE_POWER);
+            }
         }
 
         public void Hurt(float damage = 10)

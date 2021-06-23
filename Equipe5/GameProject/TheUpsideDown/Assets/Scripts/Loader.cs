@@ -7,6 +7,11 @@ public static class Loader
     private static GameScene _targetScene;
     public static GameScene CurrentScene { get; set; }
 
+    public static void Reload()
+    {
+        Load(CurrentScene);
+    }
+
     public static void Load(GameScene scene, bool loadRightNow = false)
     {
         CurrentScene = scene;

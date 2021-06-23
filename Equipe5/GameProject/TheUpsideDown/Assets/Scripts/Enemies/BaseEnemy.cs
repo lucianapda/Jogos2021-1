@@ -11,13 +11,26 @@ public abstract class BaseEnemy : MonoBehaviour
     protected virtual float MovePower { get; } = 1f;
     protected virtual float DamagePower { get; } = 10f;
 
+    protected virtual float MaxHealth { get; } = 25f;
+
+    private float _currentHealth;
+    private bool Alive => _currentHealth > 0;
+
     private float _timer = 0;
 
     public PlayerController Player;
 
+    void Start()
+    {
+        _currentHealth = MaxHealth;
+    }
+
     void Update()
     {
-        Move();
+        if (Alive)
+            Move();
+        else
+            gameObject.SetActive(false);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -39,6 +52,11 @@ public abstract class BaseEnemy : MonoBehaviour
             GameObject.Find(TagName).transform.position -= new Vector3(WalkDistance, 0, 0);
             _timer = 0;
         }
+    }
+
+    public void Hurt(float damage)
+    {
+        _currentHealth -= damage;
     }
 
     public void Rotate()

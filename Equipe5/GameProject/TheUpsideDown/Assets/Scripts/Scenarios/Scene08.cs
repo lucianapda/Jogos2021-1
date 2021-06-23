@@ -1,20 +1,16 @@
 using Assets.Enums;
 using UnityEngine;
 
-public class Scene08 : BaseScene
+public class Scene08 : FigthScene
 {
     public override GameScene NextScene => GameScene.NinethScene;
+    public GameObject Bunny;
 
     void Start()
     {
         Loader.CurrentScene = GameScene.EighthScenario;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            ChangeScene();
-        }
-    }
+    protected override bool ShouldChangeScene()
+        => !Bunny.gameObject.activeSelf;
 }

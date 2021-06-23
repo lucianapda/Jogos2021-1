@@ -2,7 +2,7 @@
 
 public class Scene09 : DialogScene
 {
-    public override GameScene NextScene => GameScene.TenthScenario;
+    public override GameScene NextScene => GameScene.EleventhScene; // Mudar para TenthScene quando o Gato for incluído
 
     public override void ConfigureSceneDialog()
     {

@@ -28,6 +28,6 @@ public class GameOverMenu : MonoBehaviour
     public void Restart()
     {
         HideMenu();
-        Loader.Load(Assets.Enums.GameScene.MainMenu);
+        Loader.Reload();
     }
 }

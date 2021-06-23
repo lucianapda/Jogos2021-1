@@ -1,20 +1,17 @@
 using Assets.Enums;
 using UnityEngine;
 
-public class Scene04 : BaseScene
+public class Scene04 : FigthScene
 {
     public override GameScene NextScene => GameScene.FifthScene;
+    public GameObject Slime;
+    public GameObject Snail;
 
     void Start()
     {
         Loader.CurrentScene = GameScene.FourthScenario;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            ChangeScene();
-        }
-    }
+    protected override bool ShouldChangeScene()
+        => !Slime.gameObject.activeSelf && !Snail.gameObject.activeSelf;
 }
