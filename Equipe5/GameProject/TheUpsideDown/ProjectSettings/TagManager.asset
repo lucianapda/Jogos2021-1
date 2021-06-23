@@ -11,6 +11,8 @@ TagManager:
   - staff
   - wizard
   - chamalleon
+  - snail
+  - bunny
   layers:
   - Default
   - TransparentFX
