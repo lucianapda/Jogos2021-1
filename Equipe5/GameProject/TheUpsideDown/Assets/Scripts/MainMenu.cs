@@ -64,5 +64,6 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         UserNameInput.text = USER_NAME_INPUT_PLACEHOLDER;
+        CharactersNames.ProtagonistName = string.Empty;
     }
 }
