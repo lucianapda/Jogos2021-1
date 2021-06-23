@@ -11,5 +11,11 @@ namespace Assets.Enums
         FriendlyCat,
         [StringValue("Ser Desconhecido")]
         UnknowBeing,
+        [StringValue("Lazziness")]
+        Lazziness,
+        [StringValue("Insecurity")]
+        Insecurity,
+        [StringValue("Anxiety")]
+        Anxiety
     }
 }

@@ -27,9 +27,24 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScenarios/4 - Level 1.unity
     guid: 41c1a4b8c96e4b649944228fdf925915
   - enabled: 1
+    path: Assets/Scenes/GameScenarios/5 - Between Fights.unity
+    guid: 785f7ef821dafff448c274f1b77a3fe4
+  - enabled: 1
+    path: Assets/Scenes/GameScenarios/6 - Level 2.unity
+    guid: dcf4624a7ff657d4c986afbb5834b4db
+  - enabled: 1
+    path: Assets/Scenes/GameScenarios/7 - Between Fights.unity
+    guid: 8e91a4c51248d58459dc23eeccd72e63
+  - enabled: 1
+    path: Assets/Scenes/GameScenarios/8 - Level 3.unity
+    guid: 708d30a569b10764abf5e923864c0d51
+  - enabled: 1
+    path: Assets/Scenes/GameScenarios/9 - Plot.unity
+    guid: 01c26434d1a92b54f89d33451ecc7d73
+  - enabled: 1
+    path: Assets/Scenes/GameScenarios/10 - Final Battle.unity
+    guid: c4fc430d7d8067849b8acf84f2445ef0
+  - enabled: 1
     path: Assets/Scenes/GameScenarios/11 - Ending.unity
     guid: 23ca4a76522bf17449719de6012bc97a
-  - enabled: 0
-    path:
-    guid: 00000000000000000000000000000000
   m_configObjects: {}
