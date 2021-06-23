@@ -7,7 +7,7 @@ public class Scene10 : BaseScene
 
     void Start()
     {
-
+        Loader.CurrentScene = GameScene.TenthScenario;
     }
 
     void Update()

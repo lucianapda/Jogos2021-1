@@ -40,8 +40,10 @@ namespace ClearSky
         {
             if (Alive)
             {
-                Hurt();
-                Attack();
+                if (Input.GetMouseButtonDown(Constants.PRIMARY_BUTTON))
+                {
+                    Attack();
+                }
                 Jump();
                 Run();
             }
@@ -106,22 +108,16 @@ namespace ClearSky
 
         private void Attack()
         {
-            if (Input.GetMouseButtonDown(Constants.PRIMARY_BUTTON))
-            {
-                Animation.SetTrigger(WizardStates.Attack.GetStringValue());
-            }
+            Animation.SetTrigger(WizardStates.Attack.GetStringValue());
         }
 
-        private void Hurt()
+        public void Hurt(float damage = 10)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                Animation.SetTrigger(WizardStates.Hurt.GetStringValue());
+            Animation.SetTrigger(WizardStates.Hurt.GetStringValue());
 
-                var aux = Direction == RIGHT ? -1 : 1;
-                RigidBody.AddForce(new Vector2(5f * aux, 1f), ForceMode2D.Impulse);
-                TakeDamage(20);
-            }
+            var aux = Direction == RIGHT ? -1 : 1;
+            RigidBody.AddForce(new Vector2(5f * aux, 1f), ForceMode2D.Impulse);
+            TakeDamage(damage);
         }
 
         private void Die()
@@ -133,11 +129,14 @@ namespace ClearSky
             }
         }
 
-        private void Restart()
+        public void Restart()
         {
-            Animation.SetTrigger(WizardStates.Idle.GetStringValue());
+            Direction = RIGHT;
+            IsJumping = false;
+            _dead = false;
             CurrentHealth = MaxHealth;
             HealthBar.SetHeath(CurrentHealth);
+            Animation.SetTrigger(WizardStates.Idle.GetStringValue());
         }
 
         public void TakeDamage(float damage)

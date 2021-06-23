@@ -7,7 +7,7 @@ public class Scene08 : BaseScene
 
     void Start()
     {
-
+        Loader.CurrentScene = GameScene.EighthScenario;
     }
 
     void Update()

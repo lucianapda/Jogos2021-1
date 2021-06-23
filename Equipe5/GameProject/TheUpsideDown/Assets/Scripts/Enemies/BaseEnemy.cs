@@ -1,3 +1,4 @@
+using ClearSky;
 using UnityEngine;
 
 public abstract class BaseEnemy : MonoBehaviour
@@ -8,8 +9,11 @@ public abstract class BaseEnemy : MonoBehaviour
 
     protected virtual float WalkDistance { get; private set; } = 1.0f;
     protected virtual float MovePower { get; } = 1f;
+    protected virtual float DamagePower { get; } = 10f;
 
     private float _timer = 0;
+
+    public PlayerController Player;
 
     void Update()
     {
@@ -23,9 +27,7 @@ public abstract class BaseEnemy : MonoBehaviour
         if (collidedObject.CompareTag("wall"))
             Rotate();
         else if (collidedObject.CompareTag("wizard"))
-        {
-            // Attack
-        }
+            Player.Hurt(DamagePower);
     }
 
     public void Move()
