@@ -18,6 +18,6 @@ public class StaffControl : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
       // verificar alguma forma de colidir o cajado com o personagem
-        // Debug.Log(other);
+      // Debug.Log(other);
     }
 }
