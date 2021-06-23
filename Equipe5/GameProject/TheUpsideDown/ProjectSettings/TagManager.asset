@@ -6,13 +6,12 @@ TagManager:
   tags:
   - ground
   - slime
-  - left_wall
-  - right_wall
   - staff
   - wizard
   - chamalleon
   - snail
   - bunny
+  - wall
   layers:
   - Default
   - TransparentFX
