@@ -7,7 +7,7 @@ public class Scene06 : BaseScene
 
     void Start()
     {
-
+        Loader.CurrentScene = GameScene.SixthScenario;
     }
 
     void Update()

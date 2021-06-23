@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public static class Loader
 {
     private static GameScene _targetScene;
-    public static GameScene CurrentScene { get; private set; }
+    public static GameScene CurrentScene { get; set; }
 
     public static void Load(GameScene scene, bool loadRightNow = false)
     {

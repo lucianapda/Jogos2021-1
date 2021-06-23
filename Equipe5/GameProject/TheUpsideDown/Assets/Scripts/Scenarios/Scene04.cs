@@ -7,7 +7,7 @@ public class Scene04 : BaseScene
 
     void Start()
     {
-
+        Loader.CurrentScene = GameScene.FourthScenario;
     }
 
     void Update()

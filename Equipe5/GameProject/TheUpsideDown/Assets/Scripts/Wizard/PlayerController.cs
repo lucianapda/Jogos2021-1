@@ -7,7 +7,6 @@ namespace ClearSky
     public class PlayerController : MonoBehaviour
     {
         public const float MOVE_POWER = 10f;
-        // Set Gravity Scale in Rigidbody2D Component to 5
         public const float JUMP_POWER = 15f;
 
         private const int LEFT = -1;
@@ -15,27 +14,40 @@ namespace ClearSky
 
         private Rigidbody2D RigidBody;
         private Animator Animation;
+        public HealthBar HealthBar;
+
         private int Direction = RIGHT;
         bool IsJumping = false;
-        private bool Alive = true;
+
+        public float MaxHealth = 100;
+        public float CurrentHealth;
+
+        private bool Alive => CurrentHealth > 0;
+        private bool _dead = false;
 
         private void Start()
         {
             RigidBody = GetComponent<Rigidbody2D>();
             Animation = GetComponent<Animator>();
+            HealthBar.SetMaxHealth(MaxHealth);
+            CurrentHealth = MaxHealth;
+            HealthBar.SetHeath(CurrentHealth);
+
+            Restart();
         }
 
         private void Update()
         {
-            Restart();
-
             if (Alive)
             {
                 Hurt();
-                Die();
                 Attack();
                 Jump();
                 Run();
+            }
+            else
+            {
+                Die();
             }
         }
 
@@ -108,25 +120,30 @@ namespace ClearSky
 
                 var aux = Direction == RIGHT ? -1 : 1;
                 RigidBody.AddForce(new Vector2(5f * aux, 1f), ForceMode2D.Impulse);
+                TakeDamage(20);
             }
         }
 
         private void Die()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            if (!_dead)
             {
                 Animation.SetTrigger(WizardStates.Die.GetStringValue());
-                Alive = false;
+                _dead = true;
             }
         }
 
         private void Restart()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha0))
-            {
-                Animation.SetTrigger(WizardStates.Idle.GetStringValue());
-                Alive = true;
-            }
+            Animation.SetTrigger(WizardStates.Idle.GetStringValue());
+            CurrentHealth = MaxHealth;
+            HealthBar.SetHeath(CurrentHealth);
+        }
+
+        public void TakeDamage(float damage)
+        {
+            CurrentHealth -= damage;
+            HealthBar.SetHeath(CurrentHealth);
         }
     }
 }
