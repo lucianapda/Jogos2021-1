@@ -19211,8 +19211,8 @@ GameObject:
   - component: {fileID: 1477048699}
   - component: {fileID: 1477048698}
   - component: {fileID: 1477048697}
-  - component: {fileID: 1477048696}
   - component: {fileID: 1477048695}
+  - component: {fileID: 1477048696}
   m_Layer: 5
   m_Name: Scenario
   m_TagString: Untagged
@@ -19248,7 +19248,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1477048694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5b6cdb51ed6f24187105888f18cdd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cbd7633e82a4804f976ea5a14417989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1477048697

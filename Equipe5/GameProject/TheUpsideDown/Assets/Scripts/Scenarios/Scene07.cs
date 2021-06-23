@@ -6,7 +6,7 @@ public class Scene07 : DialogScene
 
     public override void ConfigureSceneDialog()
     {
-        AddCatDialog($"Parece que você se saiu bem com {LazzinessName} também, parabéns!");
+        AddCatDialog($"Parece que você se saiu bem com {InsecurityName} também, parabéns!");
         AddCatDialog($"Agora, estamos próximos do chefão {AnxietyName}");
         AddCatDialog("Diferente dos outros, ele se movimenta rapidamente");
         AddCatDialog("Uma luta contra ele será mais desafiador, mas acredito que esteja preparada");
