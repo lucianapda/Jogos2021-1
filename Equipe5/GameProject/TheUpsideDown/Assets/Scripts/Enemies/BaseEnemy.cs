@@ -19,7 +19,6 @@ public abstract class BaseEnemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var collidedObject = collision.gameObject;
-        Debug.Log(collidedObject.tag);
 
         if (collidedObject.CompareTag("wall"))
             Rotate();
