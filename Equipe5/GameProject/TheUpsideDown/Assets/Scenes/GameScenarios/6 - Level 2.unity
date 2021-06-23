@@ -17832,8 +17832,8 @@ GameObject:
   - component: {fileID: 321378338}
   - component: {fileID: 321378337}
   m_Layer: 0
-  m_Name: Chamalleon
-  m_TagString: chamalleon
+  m_Name: Chameleon
+  m_TagString: chameleon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20425,7 +20425,7 @@ GameObject:
   - component: {fileID: 1207319023}
   - component: {fileID: 1207319024}
   m_Layer: 0
-  m_Name: Snail Square A
+  m_Name: Chameleon Wall A
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22251,7 +22251,7 @@ GameObject:
   - component: {fileID: 2030574491}
   - component: {fileID: 2030574492}
   m_Layer: 0
-  m_Name: Snail Square A
+  m_Name: Chameleon Wall B
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

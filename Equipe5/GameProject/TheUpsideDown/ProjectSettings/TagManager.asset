@@ -8,10 +8,10 @@ TagManager:
   - slime
   - staff
   - wizard
-  - chamalleon
   - snail
   - bunny
   - wall
+  - chameleon
   layers:
   - Default
   - TransparentFX
