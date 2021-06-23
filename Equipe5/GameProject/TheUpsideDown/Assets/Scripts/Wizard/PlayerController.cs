@@ -1,7 +1,6 @@
 ﻿using Assets.Enums;
 using Assets.Utils.Extensions;
 using UnityEngine;
-using System;
 
 namespace ClearSky
 {
